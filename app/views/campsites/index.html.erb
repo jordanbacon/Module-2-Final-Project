@@ -1,0 +1,5 @@
+<h1>Campsites Index</h1>
+
+<% @campsites.each do |campsite| %>
+    <%= link_to campsite.location, campsite_path(campsite)%> <br/>
+<% end %>
