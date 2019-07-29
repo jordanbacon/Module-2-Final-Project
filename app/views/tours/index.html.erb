@@ -1,4 +1,4 @@
-<h1>Sightseeing, Sceneries, Activitties and More</h1>
-<% @tours do |t| %>
-    <%= link_to t.name, t_path(t) %>
+<h1>Sightseeing, Sceneries, Activities and More</h1>
+<% @tours.each do |t| %>
+    <%= link_to t.name, tour_path(t) %></br>
 <% end %> 

@@ -1,6 +1,6 @@
 <h1> Please click on the link below to choose an available slot </h1>
-<p>@tour.name</p>
-<p>@tour.description</p>
-<p>$@tour.price</p>
+<p><%= @tour.name %></p>
+<p><%= @tour.description %></p>
+<p><%=  @tour.price %></p>
 
 <%= link_to "Choose Slot", new_tour_path %> 

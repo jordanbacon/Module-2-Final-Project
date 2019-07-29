@@ -1,11 +1,12 @@
 class ToursController < ApplicationController
-    before_action:current_tour, only[:show, :edit, :update, :destroy]
+    before_action:current_tour, only:[:show, :edit, :update, :destroy]
     def index 
         @tours = Tour.all 
     end 
     def show
     end 
     def new
+        @tour = Tour.new
     end
     def edit 
     end
@@ -18,6 +19,6 @@ class ToursController < ApplicationController
         @tour = Tour.find(params[:id])
     end 
     def tour_params
-        params.permit(:name, :description, :price, user_ids: [])
+        params.permit(:name, :description, :price, slot_ids: [])
     end 
 end
