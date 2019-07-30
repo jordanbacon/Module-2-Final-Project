@@ -1,0 +1,5 @@
+<%= form_for @tour do |f| %>
+    <%= f.label :slots %>
+    <%= f.collection_select :slot_ids, Slot.all, :id, :time %> 
+    <%= f.submit "Book Slot" %> 
+<% end %> 

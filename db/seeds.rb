@@ -40,5 +40,33 @@ s2 = Slot.create(tour_id: t2.id, user_id: u2.id)
 s3 = Slot.create(tour_id: t3.id, user_id: u1.id)
 s4 = Slot.create(tour_id: t4.id, user_id: u1.id)
 
-r1 = Review.create(description: 'Old Faithful was amazing! But take my advice: do not wade in the geysers. Those things are hot!', national_park_id: n1.id, user_id: u1.id)
+r1 = Review.create(description: 'Old Faithful was amazing! But take my advice: do not wade into the geysers. Those things are hot!', national_park_id: n1.id, user_id: u1.id)
 r2 = Review.create(description: 'Had a great time, even though many of the waterfalls have dried up :( Do not miss out on the chance to watch the sunrise at Half Dome!', national_park_id: n2.id, user_id: u2.id)
+
+# 8.times do |i|
+#     Slot.create(tour_id: t1.id, user_id: nil, time: i+9)
+# end
+
+# 8.times do |i|
+#     Slot.create(tour_id: t2.id, user_id: nil, time: i+9)
+# end
+
+# 8.times do |i|
+#     Slot.create(tour_id: t3.id, user_id: nil, time: i+9)
+# end
+
+# 8.times do |i|
+#     Slot.create(tour_id: t4.id, user_id: nil, time: i+9)
+# end
+
+# s1 = Slot.find(4)
+# s1.user_id = u1.id
+# s1.save
+
+# s2 = Slot.find(7)
+# s2.user_id = u2.id
+# s2.save
+
+# s3 = Slot.find(11)
+# s3.user_id = u1.id
+# s3.save

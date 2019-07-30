@@ -3,6 +3,7 @@ class CreateSlots < ActiveRecord::Migration[5.2]
     create_table :slots do |t|
       t.integer :tour_id
       t.integer :user_id
+      t.integer :time
 
       t.timestamps
     end

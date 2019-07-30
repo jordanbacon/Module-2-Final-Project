@@ -1,0 +1,12 @@
+<h1>Create User</h1>
+<div class="container">
+<%= form_for :user, url: '/users' do |f| %>
+  <div class="form-group">
+  Name: <%= f.text_field :name, class: "form-control"%>
+  Email Address:<%= f.text_field :email_address, class: "form-control" %>
+  Password: <%= f.password_field :password, class: "form-control" %>
+  Password Confirmation: <%= f.password_field :password_confirmation, class: "form-control" %>
+  </div>
+  <%= f.submit "Create User", class:"btn btn-primary" %>
+<% end %>
+</div>
