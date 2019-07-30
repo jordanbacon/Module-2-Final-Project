@@ -4,9 +4,11 @@ class ToursController < ApplicationController
         @tours = Tour.all 
     end 
     def show
+        @slots = Slot.all 
     end 
     def new
-        @tour = Tour.new
+        @tour1 = Tour.new 
+        @tour = Tour.find(params[:id])
     end
     def edit 
     end

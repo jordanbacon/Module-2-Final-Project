@@ -17,40 +17,32 @@ t4 = Tour.create(name: 'Rockin Rock Climbing', description: 'On belay, climb awa
 u1 = User.create(first_name: 'Erica', last_name: 'Alpha', email: 'erica@gmail.com', password: 'sendorbesent19')
 u2 = User.create(first_name: 'Dean', last_name: 'Bravo', email: 'dean@gmail.com', password: 'nooffseason21')
 
-
-
-8.times do |i|
+4.times do |i|
     Slot.create(tour_id: t1.id, user_id: nil, time: i+9)
 end
 
-8.times do |i|
-    Slot.create(tour_id: t2.id, user_id: nil, time: i+9)
-end
+# 8.times do |i|
+#     Slot.create(tour_id: t2.id, user_id: nil, time: i+9)
+# end
 
-8.times do |i|
-    Slot.create(tour_id: t3.id, user_id: nil, time: i+9)
-end
+# 8.times do |i|
+#     Slot.create(tour_id: t3.id, user_id: nil, time: i+9)
+# end
 
-8.times do |i|
-    Slot.create(tour_id: t4.id, user_id: nil, time: i+9)
-end
+# 8.times do |i|
+#     Slot.create(tour_id: t4.id, user_id: nil, time: i+9)
+# end
 
 # s1 = Slot.create(tour_id: t1.id, user_id: u2.id, time: 9)
 # s2 = Slot.create(tour_id: t2.id, user_id: u2.id, time: 10)
 # s3 = Slot.create(tour_id: t3.id, user_id: u1.id, time: 11)
 # s4 = Slot.create(tour_id: t4.id, user_id: u1.id, time: 12)
 
-s1 = Slot.find(4)
-s1.user_id = u1.id
-s1.save
-
-s2 = Slot.find(7)
-s2.user_id = u2.id
-s2.save
-
-s3 = Slot.find(11)
-s3.user_id = u1.id
-s3.save
+10.times do
+    s1 = Slot.all.sample
+    s1.user_id = User.all.sample.id
+    s1.save 
+end
 
 
     
