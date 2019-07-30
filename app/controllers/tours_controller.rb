@@ -4,13 +4,15 @@ class ToursController < ApplicationController
 
     def index 
         @tours = Tour.all 
-    end 
+    end
 
     def show
-    end 
+        @slots = Slot.all 
+    end
 
     def new
-        @tour = Tour.new
+        @tour1 = Tour.new 
+        @tour = Tour.find(params[:id])
     end
 
     def edit 
@@ -19,16 +21,15 @@ class ToursController < ApplicationController
     def update
         @tour.update(tour_params)
         redirect_to @tour 
-    end 
+    end
 
     private 
-
     def current_tour
         @tour = Tour.find(params[:id])
-    end 
-    
+    end
+
     def tour_params
         params.permit(:name, :description, :price, slot_ids: [])
-    end 
+    end
 
 end

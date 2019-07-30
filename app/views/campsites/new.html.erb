@@ -1,0 +1,5 @@
+<%= form_for @campsite do |f| %>
+    <%= f.label :bookings %>
+    <%= f.collection_select :booking_ids, Booking.all, :id, :location %> 
+    <%= f.submit "Make Booking" %> 
+<% end %> 

@@ -7,4 +7,8 @@ class User < ApplicationRecord
     has_many :reviews
     has_many :national_parks, through: :reviews
 
+    validates :name, presence: true 
+    validates :email_address, presence: true 
+    validates :password, presence: true
+
 end

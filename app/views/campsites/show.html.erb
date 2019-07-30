@@ -6,3 +6,13 @@
 <li>Price: $<%= @campsite.price %></li>
 <li>National Park: <%= @campsite.national_park_id %></li>
 </ul>
+
+
+<h1> Please click on the link below to choose an available booking </h1>
+<p><%= @campsite.site_number %></p>
+<p><%= @campsite.location %></p>
+<p><%=  @campsite.accomodation %></p>
+<p><%=  @campsite.price %></p>
+<p><%=  @campsite.length_of_stay %></p>
+
+<%= link_to "Choose Booking", new_booking_path %> 
