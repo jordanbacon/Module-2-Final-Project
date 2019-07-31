@@ -9,3 +9,6 @@
 <% @reviews.each do |reviews| %>
     <%= link_to reviews.user.name, review_path(reviews)%> <br/><br/>
 <% end %>
+
+<p>Create New Review</p>
+    <%= link_to "Make Review", new_review_path %> <br/><br/>

@@ -19,6 +19,16 @@ u2 = User.create(name: 'Dean Bravo', email_address: 'dean@gmail.com', password: 
 
 n1 = NationalPark.create(name: 'Yellowstone National Park', description: 'First national park in the U.S. Known for its geothermal features, including Old Faithful! Grizzly bears, wolves, bison, and elk call this park home. Part of the South Central Rockies forests ecoregion.', location: 'Wyoming/Montana/Idaho')
 n2 = NationalPark.create(name: 'Yosemite National Park', description: 'Recognized for its U-shaped valley, giant sequoias, waterfalls, mountains, and biological diversity. One of the most popular climbing destinations in the world, including sites such as El Capitan and Half Dome. ', location: 'Central California')
+n3 = NationalPark.create(name: 'Rocky Mountain National Park', description: nil, location: nil)
+n4 = NationalPark.create(name: 'Glacier National Park', description: nil, location: nil)
+n5 = NationalPark.create(name: 'Zion National Park', description: nil, location: nil)
+n6 = NationalPark.create(name: 'Olympic National Park', description: nil, location: nil)
+n7 = NationalPark.create(name: 'Grand Canyon National Park', description: nil, location: nil)
+n8 = NationalPark.create(name: 'Arches National Park', description: nil, location: nil)
+n9 = NationalPark.create(name: 'Sequoia National Park', description: nil, location: nil)
+n10 = NationalPark.create(name: 'Mount Rainer National Park', description: nil, location: nil)
+n11 = NationalPark.create(name: 'Death Valley National Park', description: nil, location: nil)
+n12 = NationalPark.create(name: 'Grand Teton National Park', description: nil, location: nil)
 
 c1 = Campsite.create(site_number: 183, location: 'Lewis Lake Campground', accomodation: 'Small Campsite', length_of_stay: '2 days', price: 40, national_park_id: n1.id)
 c2 = Campsite.create(site_number: 78, location: 'Grant Village Campground', accomodation: 'Group Campsite', length_of_stay: '5 days', price: 155, national_park_id: n1.id)
@@ -35,15 +45,15 @@ b2 = Booking.create(campsite_id: c2.id, user_id: u2.id)
 b3 = Booking.create(campsite_id: c3.id, user_id: u2.id)
 b4 = Booking.create(campsite_id: c4.id, user_id: u1.id)
 
-s1 = Slot.create(tour_id: t1.id, user_id: u2.id)
-s2 = Slot.create(tour_id: t2.id, user_id: u2.id)
-s3 = Slot.create(tour_id: t3.id, user_id: u1.id)
-s4 = Slot.create(tour_id: t4.id, user_id: u1.id)
+# s1 = Slot.create(tour_id: t1.id, user_id: u2.id)
+# s2 = Slot.create(tour_id: t2.id, user_id: u2.id)
+# s3 = Slot.create(tour_id: t3.id, user_id: u1.id)
+# s4 = Slot.create(tour_id: t4.id, user_id: u1.id)
 
 r1 = Review.create(description: 'Old Faithful was amazing! But take my advice: do not wade into the geysers. Those things are hot!', national_park_id: n1.id, user_id: u1.id)
 r2 = Review.create(description: 'Had a great time, even though many of the waterfalls have dried up :( Do not miss out on the chance to watch the sunrise at Half Dome!', national_park_id: n2.id, user_id: u2.id)
 
-8.times do |i|
+4.times do |i|
     Slot.create(tour_id: t1.id, user_id: nil, time: i+9)
 end
 
@@ -59,14 +69,19 @@ end
     Slot.create(tour_id: t4.id, user_id: nil, time: i+9)
 end
 
-# s1 = Slot.find(4)
-# s1.user_id = u1.id
-# s1.save
+# s1 = Slot.create(tour_id: t1.id, user_id: u2.id, time: 9)
+# s2 = Slot.create(tour_id: t2.id, user_id: u2.id, time: 10)
+# s3 = Slot.create(tour_id: t3.id, user_id: u1.id, time: 11)
+# s4 = Slot.create(tour_id: t4.id, user_id: u1.id, time: 12)
 
-# s2 = Slot.find(7)
-# s2.user_id = u2.id
-# s2.save
+10.times do
+    s1 = Slot.all.sample
+    s1.user_id = User.all.sample.id
+    s1.save 
+end
 
-# s3 = Slot.find(11)
-# s3.user_id = u1.id
-# s3.save
+# 10.times do
+#     s1 = Slot.all.sample
+#     s1.user_id = Tour.all.sample.id
+#     s1.save 
+# end

@@ -14,7 +14,11 @@ class User < ApplicationRecord
     has_secure_password
 
     def has_campsites
-        self.campsites != []
+        if self.campsites.length > 0
+            true
+        else
+            false
+        end
     end
 
     def campsite_count
@@ -22,7 +26,11 @@ class User < ApplicationRecord
     end
 
     def has_tours
-        self.tours != []
+        if self.tours.length > 0
+            true
+        else
+            false
+        end
     end
     
     def tour_count
@@ -30,7 +38,11 @@ class User < ApplicationRecord
     end
 
     def has_reviews
-        self.review != []
+        if self.reviews.length > 0
+            true
+        else
+            false
+        end
     end
 
     def reviews_count

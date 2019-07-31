@@ -1,6 +1,9 @@
-<h1> Please click on the link below to choose an available slot </h1>
-<p><%= @tour.name %></p>
-<p><%= @tour.description %></p>
-<p><%=  @tour.price %></p>
+<h1> Please click on the time below to choose an available slot </h1>
+<p>Tour: <%= @tour.name %></p>
+<p>Description: <%= @tour.description %></p>
+<p>Price: <%=  @tour.price %></p>
 
-<%= link_to "Choose Slot", new_tour_path %> 
+<%= form_with url: '/edit_slot' do |f| %>
+    <%= f.collection_select :slot_id, @slots, :id, :time %>
+    <%= f.submit "Select Slot"%>
+<% end %> 

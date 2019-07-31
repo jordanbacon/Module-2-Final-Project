@@ -2,7 +2,7 @@
 <h3>You have successfully logged in. Please select one of the links to start navigating the site.</h3></br>
 
 <h4>Your Reservations</h4>
-<% if !@user.has_campsites %>
+<% if @user.has_campsites == true %>
     <% Campsite.all.each do |c| %>
         <%= link_to "Your Campsites", campsite_path %>
   <% end %>
@@ -11,7 +11,7 @@
 <% end %>
 <br>
 
-<% if !@user.tours %>
+<% if @user.has_tours == true %>
     <% Tour.all.each do |t| %>
         <%= link_to "Your Tours", tour_path %>
   <% end %>
@@ -20,7 +20,7 @@
 <% end %>
 <br>
 
-<% if !@user.reviews %>
+<% if @user.has_reviews == true %>
     <% Review.all.each do |r| %>
         <%= link_to "Your Reviews", review_path %>
   <% end %>
@@ -31,9 +31,9 @@
 
 <h4>Other Options</h4>
 
-<%= link_to "Explore Campsites", @campsite %></br></br>
-<%= link_to "Explore Tours", @tour %></br></br>
-<%= link_to "Explore Reviews", @review %></br></br>
+<%= link_to "Explore Campsites", campsites_path %></br></br>
+<%= link_to "Explore Tours", tours_path %></br></br>
+<%= link_to "Explore Reviews", reviews_path %></br></br>
 
 <h5>Log Out</h5>
 <%= form_with url:'/logout', method: 'delete' do |f| %>

@@ -7,11 +7,13 @@ class ToursController < ApplicationController
     end
 
     def show
-        @slots = Slot.all 
+        @slots = Slot.all.select {|slot| slot.tour_id == current_tour.id && 
+                                  slot.user_id == nil} 
     end
 
     def new
         @tour1 = Tour.new 
+        @tours = Tour.all 
         @tour = Tour.find(params[:id])
     end
 
@@ -24,12 +26,13 @@ class ToursController < ApplicationController
     end
 
     private 
+
     def current_tour
         @tour = Tour.find(params[:id])
     end
 
     def tour_params
-        params.permit(:name, :description, :price, slot_ids: [])
+        params.require(:tour).permit(:name, :description, :price)
     end
 
 end
