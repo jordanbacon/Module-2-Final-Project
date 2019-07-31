@@ -8,7 +8,7 @@ class User < ApplicationRecord
     has_many :national_parks, through: :reviews
 
     validates :name, presence: true 
-    validates :email_address, presence: true 
+    validates :email_address, presence: true, uniqueness: true
     validates :password, presence: true
 
     has_secure_password

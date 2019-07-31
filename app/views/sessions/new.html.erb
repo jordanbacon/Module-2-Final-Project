@@ -1,3 +1,6 @@
+<h1>Welcome!</h1>
+<p>Please log in</p>
+
 <%= form_with url: '/login', method: "post" do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %>
@@ -7,3 +10,7 @@
 <%= f.password_field :password %> 
 <%= f.submit "Login" %>
 <% end %>
+
+</br></br>
+<p>or sign up:</p>
+<%= link_to "Sign Up", new_user_path %></br></br>

@@ -1,9 +1,9 @@
-<h1>Welcome <%=session[:username]%>!</h1>
+<h1>Welcome <%=@user.name%>!</h1>
 <h4>You have successfully logged in. Please select one of the links to start navigating the site.</h4>
 
-<%= link_to "Find a Campsite", campsite_path %></br></br>
-<%= link_to "Find a Tour", tour_path %></br></br>
-<%= link_to "Reviews", review_path %></br></br>
+<%= link_to "Your Campsites", campsite_path %></br></br>
+<%= link_to "Your Tours", tour_path %></br></br>
+<%= link_to "Your Reviews", review_path %></br></br>
 
 <%= form_with url:'/logout', method: 'delete' do |f| %>
 <%= f.submit "Logout"%> 
