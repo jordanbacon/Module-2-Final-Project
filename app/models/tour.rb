@@ -8,4 +8,12 @@ class Tour < ApplicationRecord
     validates :description, presence: true
     validates :price, presence: true
 
+    def number_of_slots
+        self.slots.count
+    end
+
+    def alphabetized_tour_names
+        self.names.sort
+    end
+
 end

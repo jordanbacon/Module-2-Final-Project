@@ -13,4 +13,20 @@ class User < ApplicationRecord
 
     has_secure_password
 
+    def my_campsites
+        self.campsites
+    end
+
+    def campsite_count
+        self.campsites.length
+    end
+
+    def my_tours
+        self.tours
+    end
+    
+    def tour_count
+        self.tour.length
+    end
+
 end

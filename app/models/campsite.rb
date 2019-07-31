@@ -10,4 +10,12 @@ class Campsite < ApplicationRecord
     validates :price, presence: true
     validates :length_of_stay, presence: true
 
+    def number_of_bookings
+        self.bookings.count
+    end
+
+    def sorted_campsite_numbers
+        self.site_number.sort
+    end
+
 end

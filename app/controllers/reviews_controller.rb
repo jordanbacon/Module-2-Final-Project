@@ -16,10 +16,12 @@ class ReviewsController < ApplicationController
   
     def create
         @review = Review.new
-        if @review.save
+        
+        if @review.valid?
+          @review.save
           redirect_to review_path(@review)
         else
-          render :new
+          redirect_to new_review_path
         end
     end
 
