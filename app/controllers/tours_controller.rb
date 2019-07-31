@@ -7,6 +7,8 @@ class ToursController < ApplicationController
     def show
         @slots = Slot.all.select {|slot| slot.tour_id == current_tour.id && 
                                   slot.user_id == nil} 
+        
+        # redirect_to slot_path(@slot) 
     end 
 
     def new

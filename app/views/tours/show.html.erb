@@ -1,7 +1,7 @@
 <h1> Please click on the time below to choose an available slot </h1>
 <p>Tour: <%= @tour.name %></p>
 <p>Description: <%= @tour.description %></p>
-<p>Price: <%=  @tour.price %></p>
+<p>Price: $<%=  @tour.price %></p>
 
 <%= form_with url: '/edit_slot' do |f| %>
     <%= f.collection_select :slot_id, @slots, :id, :time %>
