@@ -10,8 +10,8 @@ class ReviewsController < ApplicationController
 
     def new
         @review = Review.new
-        @user = User.all
-        @national_park = NationalPark.all
+        @users = User.all
+        @national_parks = NationalPark.all
     end
   
     def create

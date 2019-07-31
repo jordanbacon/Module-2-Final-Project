@@ -9,6 +9,10 @@ class BookingsController < ApplicationController
         @booking = Booking.find(params[:id])
         # @user = User.find(session[:current_user_id])
     end
+
+    def new
+        @booking = Booking.new
+    end
     
     private
         

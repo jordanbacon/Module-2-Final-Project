@@ -10,4 +10,6 @@ class NationalParksController < ApplicationController
         # @user = User.find(session[:current_user_id])
     end
 
+    
+
 end

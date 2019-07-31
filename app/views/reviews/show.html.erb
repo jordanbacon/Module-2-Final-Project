@@ -1,6 +1,3 @@
-<h1><%= @review.user_id %></h1>
+<h2>What <%= @review.user.name %> has to say about <%= @review.national_park.name %></h2>
 
-<ul>
-<li>National Park: <%= @review.national_park_id %></li>
-<li>Description: <%= @review.description %></li>
-</ul>
+<%= @review.description %>

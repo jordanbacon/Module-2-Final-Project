@@ -1,5 +1,11 @@
 <h1>Reviews</h1>
 
+<p>Sort by National Park:</p>
 <% @reviews.each do |reviews| %>
-    <%= link_to reviews.description, review_path(reviews)%> <br/><br/>
+    <%= link_to reviews.national_park.name, review_path(reviews)%> <br/><br/>
+<% end %>
+
+<p>Sort by User</p>
+<% @reviews.each do |reviews| %>
+    <%= link_to reviews.user.name, review_path(reviews)%> <br/><br/>
 <% end %>

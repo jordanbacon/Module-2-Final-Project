@@ -1,2 +1,18 @@
 <h1>Welcome <%=session[:username]%>!</h1>
 <h4>You have successfully logged in. Please select one of the links to start navigating the site.</h4>
+
+<% @campsites.each do |c| %>
+    <%= link_to c.location, campsite_path(c)%> <br/>
+<% end %>
+
+<% @tours.each do |t| %>
+    <%= link_to t.name, tour_path(t)%> <br/>
+<% end %>
+
+<% @reviews.each do |r| %>
+    <%= link_to r.national_park_id, review_path(r)%> <br/>
+<% end %>
+
+<%= form_with url:'/logout', method: 'delete' do |f| %>
+<%= f.submit "Logout"%> 
+<% end %>

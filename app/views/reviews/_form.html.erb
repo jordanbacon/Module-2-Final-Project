@@ -1,7 +1,9 @@
 <%= form_for @review do |f| %>
-<%= f.collection_check_boxes :national_park_ids, @national_parks, :id, :name %>
-<%= f.collection_check_boxes :user_ids, @users, :id, :name %>
+<p>Choose a park</p>
+<%= f.collection_check_boxes :national_park_id, @national_parks, :id, :name %></br></br>
+
+<p>Write your review!</p>
 <%= f.label :description %>
-<%= f.text_field :description %>
+<%= f.text_field :description %></br></br>
 <%= f.submit %>
 <% end %> 
