@@ -3,7 +3,7 @@
 <p>Description: <%= @tour.description %></p>
 <p>Price: <%=  @tour.price %></p>
 
-<% @slots.select do |slot|%>
- <% slot.user_id != nil %>
- <p><%= link_to slot.time, new_tour_path %>:00AM</p>
-<% end %>
+<%= form_with url: '/edit_slot' do |f| %>
+    <%= f.collection_select :slot_id, @slots, :id, :time %>
+    <%= f.submit "Select Slot"%>
+<% end %> 

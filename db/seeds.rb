@@ -21,17 +21,17 @@ u2 = User.create(first_name: 'Dean', last_name: 'Bravo', email: 'dean@gmail.com'
     Slot.create(tour_id: t1.id, user_id: nil, time: i+9)
 end
 
-# 8.times do |i|
-#     Slot.create(tour_id: t2.id, user_id: nil, time: i+9)
-# end
+8.times do |i|
+    Slot.create(tour_id: t2.id, user_id: nil, time: i+9)
+end
 
-# 8.times do |i|
-#     Slot.create(tour_id: t3.id, user_id: nil, time: i+9)
-# end
+8.times do |i|
+    Slot.create(tour_id: t3.id, user_id: nil, time: i+9)
+end
 
-# 8.times do |i|
-#     Slot.create(tour_id: t4.id, user_id: nil, time: i+9)
-# end
+8.times do |i|
+    Slot.create(tour_id: t4.id, user_id: nil, time: i+9)
+end
 
 # s1 = Slot.create(tour_id: t1.id, user_id: u2.id, time: 9)
 # s2 = Slot.create(tour_id: t2.id, user_id: u2.id, time: 10)
@@ -43,6 +43,12 @@ end
     s1.user_id = User.all.sample.id
     s1.save 
 end
+
+# 10.times do
+#     s1 = Slot.all.sample
+#     s1.user_id = Tour.all.sample.id
+#     s1.save 
+# end
 
 
     
