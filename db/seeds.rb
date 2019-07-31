@@ -59,14 +59,14 @@ end
     Slot.create(tour_id: t4.id, user_id: nil, time: i+9)
 end
 
-s1 = Slot.find(4)
-s1.user_id = u1.id
-s1.save
+# s1 = Slot.find(4)
+# s1.user_id = u1.id
+# s1.save
 
-s2 = Slot.find(7)
-s2.user_id = u2.id
-s2.save
+# s2 = Slot.find(7)
+# s2.user_id = u2.id
+# s2.save
 
-s3 = Slot.find(11)
-s3.user_id = u1.id
-s3.save
+# s3 = Slot.find(11)
+# s3.user_id = u1.id
+# s3.save
