@@ -42,8 +42,6 @@
 <h5>Log Out</h5>
 <%= form_with url:'/logout', method: 'delete' do |f| %>
 <%= f.submit "Logout"%><br><br>
+<% end %>
 
 <%= link_to "Delete Your Account", user_path(@user), :method => :delete, :confirm => "Are you sure you want to delete the user?" %>
-
-
-<% end %>

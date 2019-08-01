@@ -3,11 +3,11 @@
 <p>Price: $<%= @tour.price %></p>
 
 <% if @user.has_slot(@tour) == true %>
-    <%= "You've booked this tour!" %></br>
+    <%= "You've booked this tour!" %><br>
 <% else %>
     <h3> Please click on the time below to choose an available slot </h3>
-    <%= form_with url: '/edit_slot' do |f| %>
-    <%= f.collection_select :slot_id, @slots, :id, :time %>
-    <%= f.submit "Select Time Slot"%>
-<% end %>
+        <%= form_with url:'/edit_slot', method: 'post' do |f| %>
+            <%= f.collection_select :slot_id, @slots, :id, :time %>
+            <%= f.submit "Select Time Slot"%>
+        <% end %>
 <% end %>

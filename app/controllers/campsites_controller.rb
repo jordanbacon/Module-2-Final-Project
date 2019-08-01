@@ -8,9 +8,8 @@ class CampsitesController < ApplicationController
 
     def show
         # @bookings = Booking.all 
-        @bookings = Booking.all.select {|booking| booking.campsite_id == current_campsite.id && 
+        @bookings = Booking.all.select {|booking| booking.campsite_id == current_campsite.id &&
         booking.user_id == nil} 
-            
             # redirect_to booking_path(@booking) 
     end
 
@@ -29,6 +28,7 @@ class CampsitesController < ApplicationController
     end
 
     private 
+    
     def current_campsite
         @campsite = Campsite.find(params[:id])
     end
