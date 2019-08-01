@@ -7,11 +7,16 @@ class CampsitesController < ApplicationController
     end
 
     def show
-        @bookings = Booking.all 
+        # @bookings = Booking.all 
+        @bookings = Booking.all.select {|booking| booking.campsite_id == current_campsite.id && 
+        booking.user_id == nil} 
+            
+            # redirect_to booking_path(@booking) 
     end
 
     def new
         @campsite1 = Campsite.new 
+        @campsites = Campsite.all
         @campsite = Campsite.find(params[:id])
     end
 
@@ -29,7 +34,7 @@ class CampsitesController < ApplicationController
     end
 
     def campsite_params
-        params.permit(:site_number, :location, :accomodation, :price, :length_of_stay, booking_ids: [])
+        params.require(:campsite).permit(:site_number, :location, :accomodation, :price, :length_of_stay)
     end
 
 end

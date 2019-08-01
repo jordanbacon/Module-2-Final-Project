@@ -1,23 +1,18 @@
-class BookingsController < ApplicationController
+class SlotsController < ApplicationController
 
-    def index
-        @bookings = Booking.all
-        # @user = User.find(session[:current_user_id])
-    end
-    
+    # before_action:current_campsite, only:[:show, :edit, :update, :destroy]
+
+    def update
+        user = User.find(session[:user_id])
+        @booking = Booking.find(params[:booking_id])
+        @booking.user_id = user.id
+        @booking.save
+
+        redirect_to @booking
+    end 
+
     def show
+        @campsite = Campsite.find(params[:id])
         @booking = Booking.find(params[:id])
-        # @user = User.find(session[:current_user_id])
     end
-
-    def new
-        @booking = Booking.new
-    end
-    
-    private
-        
-    def booking_params
-        params.require(:booking).permit(:campsite_id, :user_id)
-    end
-
 end

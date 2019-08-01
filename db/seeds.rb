@@ -40,10 +40,10 @@ t2 = Tour.create(name: 'Majestic Mountain Biking', description: 'A couple bruise
 t3 = Tour.create(name: 'Nifty Nature Hike', description: 'Leaves of three, let them be!', price: 50, national_park_id: n1.id)
 t4 = Tour.create(name: 'Rockin Rock Climbing', description: 'On belay, climb away!', price: 150, national_park_id: n2.id)
 
-b1 = Booking.create(campsite_id: c1.id, user_id: u1.id)
-b2 = Booking.create(campsite_id: c2.id, user_id: u2.id)
-b3 = Booking.create(campsite_id: c3.id, user_id: u2.id)
-b4 = Booking.create(campsite_id: c4.id, user_id: u1.id)
+# b1 = Booking.create(campsite_id: c1.id, user_id: u1.id)
+# b2 = Booking.create(campsite_id: c2.id, user_id: u2.id)
+# b3 = Booking.create(campsite_id: c3.id, user_id: u2.id)
+# b4 = Booking.create(campsite_id: c4.id, user_id: u1.id)
 
 # s1 = Slot.create(tour_id: t1.id, user_id: u2.id)
 # s2 = Slot.create(tour_id: t2.id, user_id: u2.id)
@@ -85,3 +85,30 @@ end
 #     s1.user_id = Tour.all.sample.id
 #     s1.save 
 # end
+
+4.times do |i|
+    Booking.create(campsite_id: c1.id, user_id: nil, time: i+9)
+end
+
+8.times do |i|
+    Booking.create(campsite_id: c2.id, user_id: nil, time: i+9)
+end
+
+8.times do |i|
+    Booking.create(campsite_id: c3.id, user_id: nil, time: i+9)
+end
+
+8.times do |i|
+    Booking.create(campsite_id: c4.id, user_id: nil, time: i+9)
+end
+
+# s1 = Slot.create(tour_id: t1.id, user_id: u2.id, time: 9)
+# s2 = Slot.create(tour_id: t2.id, user_id: u2.id, time: 10)
+# s3 = Slot.create(tour_id: t3.id, user_id: u1.id, time: 11)
+# s4 = Slot.create(tour_id: t4.id, user_id: u1.id, time: 12)
+
+10.times do
+    b1 = Booking.all.sample
+    b1.user_id = User.all.sample.id
+    b1.save 
+end

@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   post '/edit_slot', to: 'slots#update'
   resources :slots, only: [:show]
 
+  post '/edit_booking', to: 'bookings#update'
+  resources :bookings, only: [:show]
+
   resources :sessions, only: [:new, :create, :destroy, :index]
   get '/login', to: "sessions#new"
   post '/login', to: "sessions#create"
