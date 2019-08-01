@@ -1,0 +1,5 @@
+<h1>National Parks</h1>
+
+<% @national_parks.each do |national_parks| %>
+    <%= link_to national_parks.name, national_park_path(national_parks)%> <br/>
+<% end %>

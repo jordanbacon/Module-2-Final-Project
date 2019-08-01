@@ -1,0 +1,5 @@
+<h1>Bookings Index</h1>
+
+<% @bookings.each do |booking| %>
+    <%= link_to booking.campsite_id, booking_path(booking)%> <br/>
+<% end %>

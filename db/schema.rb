@@ -12,6 +12,40 @@
 
 ActiveRecord::Schema.define(version: 2019_07_29_210826) do
 
+  create_table "bookings", force: :cascade do |t|
+    t.integer "campsite_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "campsites", force: :cascade do |t|
+    t.integer "site_number"
+    t.string "location"
+    t.string "accomodation"
+    t.string "length_of_stay"
+    t.integer "price"
+    t.integer "national_park_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "national_parks", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "description"
+    t.integer "national_park_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "slots", force: :cascade do |t|
     t.integer "tour_id"
     t.integer "user_id"

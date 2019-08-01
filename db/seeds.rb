@@ -8,6 +8,10 @@
 Tour.destroy_all
 User.destroy_all
 Slot.destroy_all
+NationalPark.destroy_all
+Campsite.destroy_all
+Booking.destroy_all
+Review.destroy_all
 
 t1 = Tour.create(name: 'Rippin Rafting', description: 'A fun ride down class III and IV rapids!', price: 100)
 t2 = Tour.create(name: 'Majestic Mountain Biking', description: 'A couple bruises never hurt anybody!', price: 90)
@@ -44,11 +48,36 @@ end
     s1.save 
 end
 
-# 10.times do
+# 10.times do 
 #     s1 = Slot.all.sample
 #     s1.user_id = Tour.all.sample.id
 #     s1.save 
 # end
 
+n1 = NationalPark.create(name: 'Yellowstone National Park', description: 'First national park in the U.S. Known for its geothermal features, including Old Faithful! Grizzly bears, wolves, bison, and elk call this park home. Part of the South Central Rockies forests ecoregion.', location: 'Wyoming/Montana/Idaho')
+n2 = NationalPark.create(name: 'Yosemite National Park', description: 'Recognized for its U-shaped valley, giant sequoias, waterfalls, mountains, and biological diversity. One of the most popular climbing destinations in the world, including sites such as El Capitan and Half Dome. ', location: 'Central California')
+n3 = NationalPark.create(name: 'Rocky Mountain National Park', description: nil, location: nil)
+n4 = NationalPark.create(name: 'Glacier National Park', description: nil, location: nil)
+n5 = NationalPark.create(name: 'Zion National Park', description: nil, location: nil)
+n6 = NationalPark.create(name: 'Olympic National Park', description: nil, location: nil)
+n7 = NationalPark.create(name: 'Grand Canyon National Park', description: nil, location: nil)
+n8 = NationalPark.create(name: 'Arches National Park', description: nil, location: nil)
+n9 = NationalPark.create(name: 'Sequoia National Park', description: nil, location: nil)
+n10 = NationalPark.create(name: 'Mount Rainer National Park', description: nil, location: nil)
+n11 = NationalPark.create(name: 'Death Valley National Park', description: nil, location: nil)
+n12 = NationalPark.create(name: 'Grand Teton National Park', description: nil, location: nil)
 
+c1 = Campsite.create(site_number: 183, location: 'Lewis Lake Campground', accomodation: 'Small Campsite', length_of_stay: '2 days', price: 40, national_park_id: n1.id)
+c2 = Campsite.create(site_number: 78, location: 'Grant Village Campground', accomodation: 'Group Campsite', length_of_stay: '5 days', price: 155, national_park_id: n1.id)
+c3 = Campsite.create(site_number: 216, location: 'Upper Pines (Yosemite Valley)', accomodation: 'Large Campsite', length_of_stay: '3 days', price: 78, national_park_id: n2.id)
+c4 = Campsite.create(site_number: 54, location: 'Tamarack Flat (North of Yosemite Valley)', accomodation: 'Small Campsite', length_of_stay: '2 days', price: 24, national_park_id: n2.id)
+
+b1 = Booking.create(campsite_id: c1.id, user_id: u1.id)
+b2 = Booking.create(campsite_id: c2.id, user_id: u2.id)
+b3 = Booking.create(campsite_id: c3.id, user_id: u2.id)
+b4 = Booking.create(campsite_id: c4.id, user_id: u1.id)
+
+r1 = Review.create(description: 'Old Faithful was amazing! But take my advice: do not wade into the geysers. Those things are hot!', national_park_id: n1.id, user_id: u1.id)
+r2 = Review.create(description: 'Had a great time, even though many of the waterfalls have dried up :( Do not miss out on the chance to watch the sunrise at Half Dome!', national_park_id: n2.id, user_id: u2.id)
+    
     

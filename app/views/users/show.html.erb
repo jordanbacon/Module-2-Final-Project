@@ -1,0 +1,47 @@
+<h1>Welcome <%=@user.name%>!</h1>
+<h3>You have successfully logged in. Please select one of the links to start navigating the site.</h3></br>
+
+<h4>Your Reservations</h4>
+<% if @user.has_campsites == true %>
+    <% Campsite.all.each do |c| %>
+        <%= link_to "Your Campsites", campsite_path %>
+  <% end %>
+<% else %>
+    <%= "You have no campsites currently reserved" %></br>
+<% end %>
+<br>
+
+<% if @user.has_tours == true %>
+    <% Tour.all.each do |t| %>
+        <%= link_to "Your Tours", tour_path %>
+  <% end %>
+<% else %>
+    <%= "You have no tours currently reserved" %></br>
+<% end %>
+<br>
+
+<% if @user.has_reviews == true %>
+    <% Review.all.each do |r| %>
+        <%= link_to "Your Reviews", review_path %>
+  <% end %>
+<% else %>
+    <%= "You haven't made any reviews" %></br>
+<% end %>
+<br>
+
+<h4>Other Options</h4>
+
+<%= link_to "Explore National Parks", national_parks_path %></br></br>
+<%= link_to "Explore Campsites", campsites_path %></br></br>
+<%= link_to "Explore Tours", tours_path %></br></br>
+<%= link_to "Explore Reviews", reviews_path %></br></br>
+
+<h5>Log Out</h5>
+<%= form_with url:'/logout', method: 'delete' do |f| %>
+<%= f.submit "Logout"%></br></br>
+
+<h5>Delete your account</h5>
+<%= link_to "Delete User Account", user_path(@user), :method => :delete, :confirm => "Are you sure you want to delete the user?" %>
+
+
+<% end %>

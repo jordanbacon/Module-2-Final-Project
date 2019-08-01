@@ -1,0 +1,15 @@
+<h1><%= @national_park.name %></h1>
+
+<ul>
+<li>Highlights: <%= @national_park.description %></li>
+<li>Location: <%= @national_park.location %></li>
+</ul>
+
+
+<% Campsite.all.each do |c| %>
+        <%= link_to "Campsites available in Park", campsite_path %>
+<% end %></br></br>
+
+<% Tour.all.each do |c| %>
+        <%= link_to "Tours available in Park", tour_path %>
+<% end %>

@@ -1,0 +1,13 @@
+<%= form_for @booking do |f| %>
+    <%= f.label :site_number %>
+    <%= f.number_field :site_number %></br></br>
+    <%= f.label :location %>
+    <%= f.text_field :location %></br></br>
+    <%= f.label :accomodation %>
+    <%= f.text_field :accomodation %></br></br>
+    <%= f.label :price %>
+    <%= f.text_field :price %></br></br>
+    <%= f.label :length_of_stay %>
+    <%= f.text_field :length_of_stay %></br></br>
+    <%= f.submit %>
+    <% end %> 
