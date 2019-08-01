@@ -1,4 +1,4 @@
-class SlotsController < ApplicationController
+class BookingsController < ApplicationController
 
     # before_action:current_campsite, only:[:show, :edit, :update, :destroy]
 
@@ -12,7 +12,6 @@ class SlotsController < ApplicationController
     end 
 
     def show
-        @campsite = Campsite.find(params[:id])
         @booking = Booking.find(params[:id])
     end
 end

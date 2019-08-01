@@ -12,5 +12,5 @@
     <%= form_with url: '/edit_booking', method: 'post' do |f| %>
         <%= f.collection_select :booking_id, @bookings, :id, :time %>
         <%= f.submit "Select Time Slot"%>
-<% end %> 
+        <% end %> 
 <% end %> 
