@@ -12,5 +12,8 @@
     <%= form_with url: '/edit_booking', method: 'post' do |f| %>
         <%= f.collection_select :booking_id, @bookings, :id, :time %>
         <%= f.submit "Select Time Slot"%>
-        <% end %> 
-<% end %> 
+        <% end %>
+<% end %><br><br>
+
+<%= link_to "Explore additional campsites", campsites_path %><br>
+<%= link_to "Explore national parks", national_parks_path %>

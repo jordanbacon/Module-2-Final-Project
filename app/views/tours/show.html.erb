@@ -10,4 +10,7 @@
             <%= f.collection_select :slot_id, @slots, :id, :time %>
             <%= f.submit "Select Time Slot"%>
         <% end %>
-<% end %>
+<% end %><br><br>
+
+<%= link_to "Explore additional tours", tours_path %><br>
+<%= link_to "Explore national parks", national_parks_path %>

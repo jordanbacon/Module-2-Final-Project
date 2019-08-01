@@ -1,3 +1,5 @@
 <h2>What <%= @review.user.name %> has to say about <%= @review.national_park.name %></h2>
 
-<%= @review.description %>
+<%= @review.description %><br><br>
+
+<%= link_to "Explore other reviews", reviews_path %><br>

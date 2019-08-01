@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
     end
   
     def create
-        @review = Review.new
+        @review = Review.new(review_params)
         
         if @review.valid?
           @review.save
@@ -23,6 +23,11 @@ class ReviewsController < ApplicationController
         else
           redirect_to new_review_path
         end
+    end
+
+    private
+    def review_params
+        params.require(:review).permit(:national_park_id, :user_id, :description)
     end
 
 end
