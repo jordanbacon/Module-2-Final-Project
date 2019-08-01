@@ -49,4 +49,20 @@ class User < ApplicationRecord
         self.review.length
     end
 
+    def has_booking(campsite)
+        if self.campsites.include?(campsite)
+            true
+        else
+            false
+        end
+    end
+
+    def has_slot(tour)
+        if self.tours.include?(tour)
+            true
+        else
+            false
+        end
+    end
+
 end

@@ -1,9 +1,13 @@
-<h1> Please click on the time below to choose an available slot </h1>
-<p>Tour: <%= @tour.name %></p>
+<h2>Tour: <%= @tour.name %></h2>
 <p>Description: <%= @tour.description %></p>
-<p>Price: <%=  @tour.price %></p>
+<p>Price: $<%= @tour.price %></p>
 
+<% if @user.has_slot(@tour) == true %>
+    <%= "You've booked this tour!" %></br>
+<% else %>
+    <h3> Please click on the time below to choose an available slot </h3>
 <%= form_with url: '/edit_slot' do |f| %>
     <%= f.collection_select :slot_id, @slots, :id, :time %>
     <%= f.submit "Select Slot"%>
-<% end %> 
+<% end %>
+<% end %>
