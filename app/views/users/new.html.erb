@@ -1,3 +1,5 @@
+<div class="container">
+
 <%= form_for(@user) do |f| %>
 <% if @user.errors.any? %>
   <div id="error_explanation">
@@ -24,3 +26,5 @@
 <%= f.password_field :password_confirmation %>
 <%= f.submit "Create User" %>
 <% end %>
+
+</div>

@@ -7,9 +7,46 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">ResAdventure</a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <% if !session[:user_id] %>
+      <li class="nav-item active">
+        <a class="nav-link" href="/login">Login<span class="sr-only">(current)</span></a>
+      </li>
+      <% else %>
+      <li class="nav-item active">
+        <a class="nav-link" href="/users/<%="#{session[:user_id]}"%>">Visit Profile<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/users/<%="#{session[:user_id]}"%>">Your Reservations<span class="sr-only">(current)</span></a>
+      <% end %>
+      <% if !session[:user_id] %>
+      <li class="nav-item active">
+        <a class="nav-link" href="/users/new">Create New Account<span class="sr-only">(current)</span></a>
+      </li>
+      <% end %>
+
+    </ul>
+  </div>
+</nav>
+
+<style>
+  body {
+ background-image: url("https://hdwallsource.com/img/2015/12/mountains-wallpaper-46880-48349-hd-wallpapers.jpg");
+ background-color: #cccccc;
+ background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+    background-color: #93B874;
+  }
+  </style>
+
     <%= yield %>
   </body>
 </html>
