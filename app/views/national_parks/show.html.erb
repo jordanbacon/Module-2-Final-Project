@@ -1,0 +1,22 @@
+<h1><%= @national_park.name %></h1>
+
+<ul>
+<li>Highlights: <%= @national_park.description %></li>
+<li>Location: <%= @national_park.location %></li>
+</ul>
+
+<% if @national_park.has_campsites == true %>
+<h6>Campsites available in this park:</h6>
+    <% @national_park.campsites.uniq.each do |n| %>
+        <%= link_to n.location, campsite_path(n) %>
+  <% end %>
+  <% end %><br><br>
+
+<% if @national_park.has_tours == true %>
+<h6>Tours available in this park:</h6>
+    <% @national_park.tours.uniq.each do |n| %>
+        <%= link_to n.name, tour_path(n) %>
+  <% end %>
+  <% end %><br><br><br>
+
+  <%= link_to "Explore other parks", national_parks_path %><br>

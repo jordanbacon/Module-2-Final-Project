@@ -1,0 +1,19 @@
+<h2><%= @campsite.national_park.name %></h2>
+<h3>Location: <%= @campsite.location %></h3>
+<p>Site Number: <%= @campsite.site_number %></p>
+<p>Accomodation: <%= @campsite.accomodation %></p>
+<p>Length of Stay: <%= @campsite.length_of_stay %></p>
+<p>Price: $<%= @campsite.price %></p>
+
+<% if @user.has_booking(@campsite) == true %>
+    <%= "You've booked this campsite!" %><br>
+<% else %>
+    <h3> Please click on the time below to choose an available slot </h3>
+    <%= form_with url: '/edit_booking', method: 'post' do |f| %>
+        <%= f.collection_select :booking_id, @bookings, :id, :time %>
+        <%= f.submit "Select Time Slot"%>
+        <% end %>
+<% end %><br><br>
+
+<%= link_to "Explore additional campsites", campsites_path %><br>
+<%= link_to "Explore national parks", national_parks_path %>

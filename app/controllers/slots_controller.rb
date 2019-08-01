@@ -12,8 +12,7 @@ class SlotsController < ApplicationController
         # byebug
     end 
 
-    def show 
-        @tour = Tour.find(params[:id])
+    def show
         @slot = Slot.find(params[:id])
     end
 end

@@ -10,7 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_29_210826) do
+ActiveRecord::Schema.define(version: 2019_07_29_214327) do
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer "campsite_id"
+    t.integer "user_id"
+    t.integer "time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "campsites", force: :cascade do |t|
+    t.integer "site_number"
+    t.string "location"
+    t.string "accomodation"
+    t.string "length_of_stay"
+    t.integer "price"
+    t.integer "national_park_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "national_parks", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "description"
+    t.integer "national_park_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "slots", force: :cascade do |t|
     t.integer "tour_id"
@@ -24,15 +59,17 @@ ActiveRecord::Schema.define(version: 2019_07_29_210826) do
     t.string "name"
     t.string "description"
     t.integer "price"
+    t.integer "national_park_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
+    t.string "name"
+    t.string "email_address"
     t.string "password"
+    t.string "password_confirmation"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
