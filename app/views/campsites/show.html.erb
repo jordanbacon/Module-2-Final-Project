@@ -11,6 +11,6 @@
     <h3> Please click on the time below to choose an available slot </h3>
     <%= form_with url: '/edit_booking' do |f| %>
         <%= f.collection_select :booking_id, @bookings, :id, :time %>
-        <%= f.submit "Select Booking"%>
+        <%= f.submit "Select Time Slot"%>
 <% end %> 
 <% end %> 
