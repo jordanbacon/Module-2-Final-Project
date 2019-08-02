@@ -8,9 +8,11 @@
 
 <div class="col1">
 <div class="container">
+<div class="text-muted">
 
 <h6>You have successfully logged in. Please select one of the links to start navigating the site.</h6><br>
 
+</div>
 </div>
 
 <div class="row">
@@ -51,6 +53,15 @@
     <%= "You haven't made any reviews" %><br>
 <% end %>
 <br><br>
+
+<h4>Your Stats</h4>
+<p>So far, you have...</p>
+  <div class="text-info">
+<h6>Booked <%= @user.campsite_count %> campsites</h6>
+<h6>Booked <%= @user.tour_count %> tours</h6>
+<h6>Made <%= @user.review_count %> reviews</h6>
+  </div>
+<p>Wow, you're amazing! Keep on exploring! </p>
 
 </div>
   <div class="col-sm-4">

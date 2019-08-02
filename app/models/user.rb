@@ -34,7 +34,7 @@ class User < ApplicationRecord
     end
     
     def tour_count
-        self.tour.length
+        self.tours.length
     end
 
     def has_reviews
@@ -45,8 +45,8 @@ class User < ApplicationRecord
         end
     end
 
-    def reviews_count
-        self.review.length
+    def review_count
+        self.reviews.length
     end
 
     def has_booking(campsite)

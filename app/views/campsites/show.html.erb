@@ -1,7 +1,7 @@
 <br><br><br>
 
 <div class="col1">
-<div class="center">
+<div class="container">
 
 <h2><%= @campsite.national_park.name %></h2>
 <h3>Location: <%= @campsite.location %></h3>
@@ -13,7 +13,7 @@
 <% if @user.has_booking(@campsite) == true %>
     <%= "You've booked this campsite!" %><br>
 <% else %>
-    <h3> Please click on the time below to choose an available slot </h3>
+    <h5> Please click on the time below to choose an available slot </h5>
     <%= form_with url: '/edit_booking', method: 'post' do |f| %>
         <%= f.collection_select :booking_id, @bookings, :id, :time %>
         <%= f.submit "Select Time Slot"%>
