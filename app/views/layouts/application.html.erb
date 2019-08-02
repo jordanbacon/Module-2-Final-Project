@@ -5,6 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
@@ -36,7 +38,7 @@
 
 <style>
   body {
- background-image: 
+ background-image: url("https://hdwallsource.com/img/2015/12/mountains-wallpaper-46880-48349-hd-wallpapers.jpg");
  background-color: #cccccc;
  background-repeat: no-repeat;
   background-attachment: fixed;
@@ -47,5 +49,12 @@
   </style>
 
     <%= yield %>
+
+    <section id="footer">
+      <div class="container text-center">
+        <h5>ResAdventure | Est. 2019</h5>
+      </div>
+    </section>
+
   </body>
 </html>

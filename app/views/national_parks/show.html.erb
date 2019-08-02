@@ -1,9 +1,18 @@
+<br><br><br>
+
+<div class="col1">
+<div class="center">
+
 <h1><%= @national_park.name %></h1>
 
-<ul>
-<li>Highlights: <%= @national_park.description %></li>
-<li>Location: <%= @national_park.location %></li>
-</ul>
+</div>
+</div>
+
+<div class="col1">
+<div class="container">
+
+Highlights: <%= @national_park.description %><br><br>
+Location: <%= @national_park.location %><br><br>
 
 <% if @national_park.has_campsites == true %>
 <h6>Campsites available in this park:</h6>
@@ -19,4 +28,9 @@
   <% end %>
   <% end %><br><br><br>
 
-  <%= link_to "Explore other parks", national_parks_path %><br>
+  <button type="button" class="btn-link"><%= link_to "Explore other parks", national_parks_path %><br></button>
+
+<br><br>
+
+  </div>
+  </div>

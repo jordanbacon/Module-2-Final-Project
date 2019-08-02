@@ -20,8 +20,8 @@ class NationalPark < ApplicationRecord
         end
     end
 
-    def national_park_count
-        self.national_parks.length
-    end
+    # def national_park_count
+    #     self.national_parks.length
+    # end
 
 end

@@ -1,28 +1,48 @@
+<br><br>
+
+<div class="center">
+    
 <h1>Welcome <%=@user.name%>!</h1>
-<h3>You have successfully logged in. Please select one of the links to start navigating the site.</h3></br>
+
+</div>
+
+<div class="col1">
+<div class="container">
+
+<h6>You have successfully logged in. Please select one of the links to start navigating the site.</h6><br>
+
+</div>
+
+<div class="row">
+  <div class="col-sm-4">
 
 <h4>Your Reservations</h4>
 <h6>Campsites:</h6>
 <% if @user.has_campsites == true %>
     <% @user.campsites.uniq.each do |c| %>
-        <%= link_to c.location, campsite_path(c) %>
+        <ul>
+        <li><%= link_to c.location, campsite_path(c) %></li>
+        </ul>
   <% end %>
 <% else %>
     <%= "You have no campsites currently reserved" %></br>
 <% end %>
-<br><br>
 
 <h6>Tours:</h6>
 <% if @user.has_tours == true %>
     <% @user.tours.uniq.each do |t| %>
-        <%= link_to t.name, tour_path(t) %>
+        <ul>
+        <li><%= link_to t.name, tour_path(t) %></li>
+        </ul>
   <% end %>
 <% else %>
     <%= "You have no tours currently reserved" %><br>
 <% end %>
-<br><br>
 
-<h4>Your Reviews:</h4>
+</div>
+  <div class="col-sm-4">
+
+<h4>Your Reviews</h4>
 <% if @user.has_reviews == true %>
     <% @user.reviews.each do |r| %>
         <%= link_to "Your Reviews", review_path(r) %>
@@ -32,6 +52,9 @@
 <% end %>
 <br><br>
 
+</div>
+  <div class="col-sm-4">
+
 <h4>Other Options</h4>
 
 <%= link_to "Explore National Parks", national_parks_path %><br><br>
@@ -39,9 +62,18 @@
 <%= link_to "Explore Tours", tours_path %><br><br>
 <%= link_to "Explore Reviews", reviews_path %><br><br>
 
-<h5>Log Out</h5>
+</div>
+</div>
+</div>
+
+<div class="center">
+<div class="navbar-fixed-bottom">
+
+<h5>...</h5>
 <%= form_with url:'/logout', method: 'delete' do |f| %>
 <%= f.submit "Logout"%><br><br>
 <% end %>
 
 <%= link_to "Delete Your Account", user_path(@user), :method => :delete, :confirm => "Are you sure you want to delete the user?" %>
+
+</div>

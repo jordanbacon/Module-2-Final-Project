@@ -1,14 +1,22 @@
+<br><br><br>
+
+<div class="col1">
+<div class="center">
+
 <h1>Reviews</h1>
 
-<p>Sort by National Park:</p>
+<h5>Sort by National Park:</h5>
 <% @reviews.each do |reviews| %>
-    <%= link_to reviews.national_park.name, review_path(reviews)%> <br/><br/>
-<% end %>
+    <%= link_to reviews.national_park.name, review_path(reviews)%> <br/>
+<% end %><br>
 
-<p>Sort by User</p>
+<h5>Sort by User</h5>
 <% @reviews.each do |reviews| %>
-    <%= link_to reviews.user.name, review_path(reviews)%> <br/><br/>
-<% end %>
+    <%= link_to reviews.user.name, review_path(reviews)%> <br/>
+<% end %><br>
 
-<p>Create New Review</p>
-    <%= link_to "Make Review", new_review_path %> <br/><br/>
+<h5>Create New Review</h5>
+    <%= link_to "Make Review", new_review_path %> <br/>
+
+</div>
+</div>

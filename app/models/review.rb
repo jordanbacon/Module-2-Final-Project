@@ -7,8 +7,8 @@ class Review < ApplicationRecord
     validates :user_id, presence: true
     validates :description, presence: true
 
-    def review_count
-        self.reviews.length
-    end
+    # def review_count
+    #     self.reviews.length
+    # end
 
 end

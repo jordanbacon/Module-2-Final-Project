@@ -12,5 +12,81 @@
  *
  */
 
+ 
  // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+
+.sidebar
+{
+    background-image: linear-gradient(rgba(107, 122, 143, 0.99),rgba(107, 122, 143, 0.99)),url(/assets/sidebar_bg.jpeg);     
+    background-size: auto;
+    background-color: #6B7A8F;
+    color: #FFF;
+    width: 33%;
+    float: left;
+    height: 100%;
+    padding-top: 30px;
+    padding-left: 20px;
+}
+
+.col1
+{
+    background-image: linear-gradient(rgba(255, 255, 255, 0.98),rgba(255, 255, 255, 0.98)),url(/assets/texture.jpeg);
+    background-size: auto;
+    float: left;
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: scroll;
+}
+
+.center 
+{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 33%;
+    
+}
+
+/* START CAROUSEL */
+
+.carousel-button
+{
+    top: 50%;
+    transform: translateY(-30%);
+    bottom: initial!important;   
+}
+
+.carousel-caption
+{
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: initial!important;
+}
+
+.carousel-caption h1
+{
+    color: #fff;
+    font-size: 72px;
+}
+
+
+.carousel-item img
+ {
+     height: calc(100vh - 61px)!important;
+ } 
+
+ .container
+{
+    text-align: center;
+    margin-top: 10px;
+}
+
+#footer
+{
+    background: #7777;
+    color: rgb(255, 255, 255);
+}

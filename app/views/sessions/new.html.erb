@@ -1,5 +1,22 @@
+<div class="container">
+<div class="col1">
+
 <h1>Welcome!</h1>
-<p>Please log in</p>
+<h5>Please log in</h5>
+
+<%= form_for(@user) do |f| %>
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+      <h2>There were some errors:</h2>
+
+    <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<% end %>
 
 <%= form_with url: '/login', method: "post" do |f| %>
 <%= f.label :name %>
@@ -12,5 +29,7 @@
 <% end %>
 
 <br><br>
-<p>or sign up:</p>
+<h5>or sign up:</h5>
 <%= link_to "Sign Up", new_user_path %><br><br>
+
+</div>
